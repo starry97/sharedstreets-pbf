@@ -319,20 +319,305 @@ export class SpeedHistogram implements ISpeedHistogram {
     public toJSON(): { [k: string]: any };
 }
 
+/** Properties of a SpeedHistogramByPeriod. */
+export interface ISpeedHistogramByPeriod {
+
+    /** SpeedHistogramByPeriod periodOffset */
+    periodOffset?: (number[]|null);
+
+    /** SpeedHistogramByPeriod histogram */
+    histogram?: (ISpeedHistogram[]|null);
+}
+
+/** Represents a SpeedHistogramByPeriod. */
+export class SpeedHistogramByPeriod implements ISpeedHistogramByPeriod {
+
+    /**
+     * Constructs a new SpeedHistogramByPeriod.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: ISpeedHistogramByPeriod);
+
+    /** SpeedHistogramByPeriod periodOffset. */
+    public periodOffset: number[];
+
+    /** SpeedHistogramByPeriod histogram. */
+    public histogram: ISpeedHistogram[];
+
+    /**
+     * Creates a new SpeedHistogramByPeriod instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns SpeedHistogramByPeriod instance
+     */
+    public static create(properties?: ISpeedHistogramByPeriod): SpeedHistogramByPeriod;
+
+    /**
+     * Encodes the specified SpeedHistogramByPeriod message. Does not implicitly {@link SpeedHistogramByPeriod.verify|verify} messages.
+     * @param message SpeedHistogramByPeriod message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: ISpeedHistogramByPeriod, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified SpeedHistogramByPeriod message, length delimited. Does not implicitly {@link SpeedHistogramByPeriod.verify|verify} messages.
+     * @param message SpeedHistogramByPeriod message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: ISpeedHistogramByPeriod, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a SpeedHistogramByPeriod message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns SpeedHistogramByPeriod
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SpeedHistogramByPeriod;
+
+    /**
+     * Decodes a SpeedHistogramByPeriod message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns SpeedHistogramByPeriod
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SpeedHistogramByPeriod;
+
+    /**
+     * Verifies a SpeedHistogramByPeriod message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a SpeedHistogramByPeriod message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns SpeedHistogramByPeriod
+     */
+    public static fromObject(object: { [k: string]: any }): SpeedHistogramByPeriod;
+
+    /**
+     * Creates a plain object from a SpeedHistogramByPeriod message. Also converts values to other types if specified.
+     * @param message SpeedHistogramByPeriod
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: SpeedHistogramByPeriod, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this SpeedHistogramByPeriod to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a SpeedSummary. */
+export interface ISpeedSummary {
+
+    /** SpeedSummary meanSpead */
+    meanSpead?: (number|null);
+
+    /** SpeedSummary percentile */
+    percentile?: (number[]|null);
+
+    /** SpeedSummary observationCount */
+    observationCount?: (number[]|null);
+}
+
+/** Represents a SpeedSummary. */
+export class SpeedSummary implements ISpeedSummary {
+
+    /**
+     * Constructs a new SpeedSummary.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: ISpeedSummary);
+
+    /** SpeedSummary meanSpead. */
+    public meanSpead: number;
+
+    /** SpeedSummary percentile. */
+    public percentile: number[];
+
+    /** SpeedSummary observationCount. */
+    public observationCount: number[];
+
+    /**
+     * Creates a new SpeedSummary instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns SpeedSummary instance
+     */
+    public static create(properties?: ISpeedSummary): SpeedSummary;
+
+    /**
+     * Encodes the specified SpeedSummary message. Does not implicitly {@link SpeedSummary.verify|verify} messages.
+     * @param message SpeedSummary message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: ISpeedSummary, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified SpeedSummary message, length delimited. Does not implicitly {@link SpeedSummary.verify|verify} messages.
+     * @param message SpeedSummary message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: ISpeedSummary, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a SpeedSummary message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns SpeedSummary
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SpeedSummary;
+
+    /**
+     * Decodes a SpeedSummary message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns SpeedSummary
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SpeedSummary;
+
+    /**
+     * Verifies a SpeedSummary message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a SpeedSummary message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns SpeedSummary
+     */
+    public static fromObject(object: { [k: string]: any }): SpeedSummary;
+
+    /**
+     * Creates a plain object from a SpeedSummary message. Also converts values to other types if specified.
+     * @param message SpeedSummary
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: SpeedSummary, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this SpeedSummary to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a SpeedSummaryByPeriod. */
+export interface ISpeedSummaryByPeriod {
+
+    /** SpeedSummaryByPeriod periodOffset */
+    periodOffset?: (number[]|null);
+
+    /** SpeedSummaryByPeriod speedSummary */
+    speedSummary?: (ISpeedSummary[]|null);
+}
+
+/** Represents a SpeedSummaryByPeriod. */
+export class SpeedSummaryByPeriod implements ISpeedSummaryByPeriod {
+
+    /**
+     * Constructs a new SpeedSummaryByPeriod.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: ISpeedSummaryByPeriod);
+
+    /** SpeedSummaryByPeriod periodOffset. */
+    public periodOffset: number[];
+
+    /** SpeedSummaryByPeriod speedSummary. */
+    public speedSummary: ISpeedSummary[];
+
+    /**
+     * Creates a new SpeedSummaryByPeriod instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns SpeedSummaryByPeriod instance
+     */
+    public static create(properties?: ISpeedSummaryByPeriod): SpeedSummaryByPeriod;
+
+    /**
+     * Encodes the specified SpeedSummaryByPeriod message. Does not implicitly {@link SpeedSummaryByPeriod.verify|verify} messages.
+     * @param message SpeedSummaryByPeriod message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: ISpeedSummaryByPeriod, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified SpeedSummaryByPeriod message, length delimited. Does not implicitly {@link SpeedSummaryByPeriod.verify|verify} messages.
+     * @param message SpeedSummaryByPeriod message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: ISpeedSummaryByPeriod, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a SpeedSummaryByPeriod message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns SpeedSummaryByPeriod
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SpeedSummaryByPeriod;
+
+    /**
+     * Decodes a SpeedSummaryByPeriod message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns SpeedSummaryByPeriod
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SpeedSummaryByPeriod;
+
+    /**
+     * Verifies a SpeedSummaryByPeriod message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a SpeedSummaryByPeriod message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns SpeedSummaryByPeriod
+     */
+    public static fromObject(object: { [k: string]: any }): SpeedSummaryByPeriod;
+
+    /**
+     * Creates a plain object from a SpeedSummaryByPeriod message. Also converts values to other types if specified.
+     * @param message SpeedSummaryByPeriod
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: SpeedSummaryByPeriod, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this SpeedSummaryByPeriod to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
 /** Properties of a SharedStreetsWeeklySpeeds. */
 export interface ISharedStreetsWeeklySpeeds {
 
     /** SharedStreetsWeeklySpeeds referenceId */
     referenceId?: (string|null);
-
-    /** SharedStreetsWeeklySpeeds year */
-    year?: (number|null);
-
-    /** SharedStreetsWeeklySpeeds month */
-    month?: (number|null);
-
-    /** SharedStreetsWeeklySpeeds day */
-    day?: (number|null);
 
     /** SharedStreetsWeeklySpeeds periodSize */
     periodSize?: (PeriodSize|null);
@@ -340,11 +625,20 @@ export interface ISharedStreetsWeeklySpeeds {
     /** SharedStreetsWeeklySpeeds scaledCounts */
     scaledCounts?: (boolean|null);
 
-    /** SharedStreetsWeeklySpeeds periodOffset */
-    periodOffset?: (number[]|null);
+    /** SharedStreetsWeeklySpeeds referenceLength */
+    referenceLength?: (number|Long|null);
 
-    /** SharedStreetsWeeklySpeeds speedsForPeriod */
-    speedsForPeriod?: (ISpeedHistogram[]|null);
+    /** SharedStreetsWeeklySpeeds numberOfBins */
+    numberOfBins?: (number|null);
+
+    /** SharedStreetsWeeklySpeeds binPosition */
+    binPosition?: (number[]|null);
+
+    /** SharedStreetsWeeklySpeeds speedsByPeriod */
+    speedsByPeriod?: (ISpeedHistogramByPeriod[]|null);
+
+    /** SharedStreetsWeeklySpeeds speedSummaryByPeriod */
+    speedSummaryByPeriod?: (ISpeedSummaryByPeriod[]|null);
 }
 
 /** Represents a SharedStreetsWeeklySpeeds. */
@@ -359,26 +653,26 @@ export class SharedStreetsWeeklySpeeds implements ISharedStreetsWeeklySpeeds {
     /** SharedStreetsWeeklySpeeds referenceId. */
     public referenceId: string;
 
-    /** SharedStreetsWeeklySpeeds year. */
-    public year: number;
-
-    /** SharedStreetsWeeklySpeeds month. */
-    public month: number;
-
-    /** SharedStreetsWeeklySpeeds day. */
-    public day: number;
-
     /** SharedStreetsWeeklySpeeds periodSize. */
     public periodSize: PeriodSize;
 
     /** SharedStreetsWeeklySpeeds scaledCounts. */
     public scaledCounts: boolean;
 
-    /** SharedStreetsWeeklySpeeds periodOffset. */
-    public periodOffset: number[];
+    /** SharedStreetsWeeklySpeeds referenceLength. */
+    public referenceLength: (number|Long);
 
-    /** SharedStreetsWeeklySpeeds speedsForPeriod. */
-    public speedsForPeriod: ISpeedHistogram[];
+    /** SharedStreetsWeeklySpeeds numberOfBins. */
+    public numberOfBins: number;
+
+    /** SharedStreetsWeeklySpeeds binPosition. */
+    public binPosition: number[];
+
+    /** SharedStreetsWeeklySpeeds speedsByPeriod. */
+    public speedsByPeriod: ISpeedHistogramByPeriod[];
+
+    /** SharedStreetsWeeklySpeeds speedSummaryByPeriod. */
+    public speedSummaryByPeriod: ISpeedSummaryByPeriod[];
 
     /**
      * Creates a new SharedStreetsWeeklySpeeds instance using the specified properties.
